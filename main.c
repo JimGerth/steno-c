@@ -1,12 +1,17 @@
 #include <stdio.h>
+// #include "steno.h"
 
 int main(int argc, char **argv) {
 
-	// printing all the command line arguments excluding the name of the programm
-	printf("command line arguments: ");
-	for (int i = 1; i < argc; i++) {
-		printf("%s ", argv[i]);
-	}
+	char *file;
+	char *message;
+	char *output;
 
-	return 0;
+	int status;
+	// int status = steno(file, message, output);
+
+	switch(status) {
+		case 1: printf("an error occured while trying to hide message"); return 1;
+		default: return 0;
+	}
 }
