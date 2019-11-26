@@ -33,7 +33,6 @@ void getOutput() {
 
 int main(int argc, char **argv) {
 
-	// at the moment message can only be one word, because of how arguments work
 	switch (argc) {
 		case 4:
 			file = argv[1];
@@ -55,11 +54,8 @@ int main(int argc, char **argv) {
 			getMessage();
 			getOutput();
 			break;
-		// TODO: make the default so that anything from the second to the second to last argument is the message
-		default: printf("correct usage: steno <input audio file path> [message file path [desired output audio file path]]"); return 0;
+		default: printf("correct usage: steno <input audio file path> [message to hide [desired output audio file path]]\nIf message is longer than one word put it inside of quotes (\"\") or escape every space (e.g. hello\\ world.)"); return 0;
 	}
-
-	printf("%s %s %s", file, message, output);
 
 	int status;
 	// int status = steno(file, message, output);
