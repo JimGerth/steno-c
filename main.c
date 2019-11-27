@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// #include "steno.h"
+#include "steno.h"
 
 char *file;
 char *message;
@@ -57,11 +57,10 @@ int main(int argc, char **argv) {
 		default: printf("correct usage: steno <input audio file path> [message to hide [desired output audio file path]]\nIf message is longer than one word put it inside of quotes (\"\") or escape every space (e.g. hello\\ world.)"); return 0;
 	}
 
-	int status;
-	// int status = steno(file, message, output);
+	int status = steno(file, message, output);
 
 	switch(status) {
-		case 1: printf("an error occured while trying to hide message"); return 1;
+		case 1: printf("an error occured while trying to hide message\n"); return 1;
 		default: return 0;
 	}
 }
